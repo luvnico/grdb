@@ -10,6 +10,7 @@ void cli_graph_new(char *cmdline, int *pos);
 void cli_graph_edge(char *cmdline, int *pos);
 void cli_graph_schema(char *cmdline, int *pos);
 void cli_graph_tuple(char *cmdline, int *pos);
+void cli_graph_dijkstra(char *cmdline, int *pos);
 
 static void
 cli_graph_print()
@@ -48,6 +49,9 @@ cli_graph(char *cmdline, int *pos)
 
 	else if (strcmp(s, "tuple") == 0 || strcmp(s, "t") == 0)
 		cli_graph_tuple(cmdline, pos);
+
+	else if (strcmp(s,"dijkstra") == 0 || strcmp(s,"d") == 0)
+		cli_graph_dijkstra(cmdline, pos);
 
 	else if (isdigit(s[0])) {
 		graph_t g;
